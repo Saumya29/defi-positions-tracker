@@ -1,53 +1,42 @@
 # DeFi Positions Tracker
 
-Track your Aave V3 and Uniswap V3 positions on Ethereum mainnet.
+One dashboard to monitor your Aave V3 lending positions and Uniswap V3 liquidity pools on Ethereum.
 
-## Features
+## Demo
 
-- 🏦 **Aave V3**: View supplied assets, borrowed amounts, collateral status, and health factor
-- 🦄 **Uniswap V3**: Track LP positions, in-range status, and unclaimed fees
-- 🔍 **Any Wallet**: Enter any Ethereum address to view positions (not just your own)
-- ⚡ **Real-time**: Auto-refreshes every 60 seconds
+<video src="demo.mp4" width="100%" autoplay loop muted playsinline></video>
 
-## Tech Stack
+![Demo](demo.gif)
 
-- **Next.js 14** - React framework
-- **TypeScript** - Type safety
-- **viem** - Ethereum interactions
-- **TanStack Query** - Data fetching & caching
-- **Tailwind CSS** - Styling
+## Why I built this
 
-## Getting Started
+I had ETH supplied on Aave, a couple of Uniswap LP positions, and no single place to see it all. Checking each protocol's UI separately got old fast. So I built a simple dashboard - paste any wallet address and see everything at once.
+
+## What it shows
+
+- **Aave V3** - Supplied assets, borrowed amounts, collateral status, health factor, LTV
+- **Uniswap V3** - LP positions, in-range/out-of-range status, unclaimed trading fees
+- **Any wallet** - Not limited to your own. Enter any Ethereum address to view positions
+- **Auto-refresh** - Updates every 60 seconds
+
+## Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Blockchain:** viem
+- **Data Fetching:** TanStack Query
+- **Styling:** Tailwind CSS
+
+## Running locally
 
 ```bash
-# Install dependencies
 pnpm install
-
-# Run development server
 pnpm dev
-
-# Build for production
-pnpm build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Environment Variables
-
-Copy `.env.example` to `.env.local` and configure:
-
-```bash
-# Optional: Use a custom RPC (recommended for production)
-NEXT_PUBLIC_RPC_URL=https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY
-```
-
-## Deployment
-
-Deploy to Vercel:
-
-```bash
-vercel deploy --prod
-```
+Optionally set `NEXT_PUBLIC_RPC_URL` in `.env.local` for a custom RPC endpoint.
 
 ## License
 
